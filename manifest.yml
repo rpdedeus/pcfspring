@@ -1,0 +1,9 @@
+---
+applications:
+  - name: rd-pcfspring
+    memory: 1G
+    instances: 1
+    buildpack: java_buildpack
+    path: target/pcfspring-0.0.1-SNAPSHOT.jar
+    services:
+      - pcf-spring
