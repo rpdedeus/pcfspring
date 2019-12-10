@@ -46,11 +46,13 @@ cf marketplace
 ```
 
 Create an instance of the ElephantSQL's service using the free tier called "turtle":
+
 ```
 cf create-service elephantsql turtle rd-pcfspring
 ```
 
 View service details using cf cli. Copy the dashboard URL to your clipboard.
+
 ```
 cf service rd-pcfspring
 ```
@@ -66,16 +68,33 @@ Use the credentials from the "Create a service" section, to create a database co
 
 ## Deployment
 
-1. Login to cf cli
+1. Login to cf cli.
 
 ```
 cf login -a https://api.run.pivotal.io
 ```
 
-2. From the project's root directory, issue the command to push the applications
+2. From the project's root directory, issue the command to push the applications.
 
 ```
-cf push
+cf push --no-start
+```
+
+3. Set environment variables.
+
+Set environment variables using the following format:  
+cf set-env APP_NAME ENV_VAR_NAME ENV_VAR_VALUE
+
+```
+cf set-env rd-pcfspring DB_UN <actual_user_name>
+cf set-env rd-pcfspring DB_PW <actual_password>
+cf set-env rd-pcfspring DB_URL <actual_url>
+```
+
+4. Start application.
+
+```
+cf start rd-pcfspring
 ```
 
 ## Actuator endpoint 
