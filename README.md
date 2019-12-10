@@ -31,7 +31,8 @@ cd pcfspring
 
 1. [Create cloud foundry account](https://login.run.pivotal.io/login)
 2. [Download cf cli](https://console.run.pivotal.io/tools) and follow instructions on the page.
-
+3. Create database service.
+4. Connect to DB from local client (optional).
 
 ## Deployment
 
@@ -55,8 +56,7 @@ Use actuator endpoint to validate that the application responds to requests.
 https://rd-pcfspring.cfapps.io/actuator/health
 ```
 
-Replace <rd-pcfspring> with you own app name.
-
+Replace **rd-pcfspring** with you own app name.
 
 ## Maintenance / management
 
