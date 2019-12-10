@@ -27,12 +27,42 @@ cd pcfspring
 ./mvnw spring-boot:run -Dspring-boot.run.jvmArguments="-Dspring.profiles.active=cloud;-DDB_URL=jdbc:postgresql://localhost:5432/pcfspring;-DDB_UN=postgres;-DDB_PW=password"
 ```
 
+# Deployment 
+
 ##  Pre-Deployment
 
 1. [Create cloud foundry account](https://login.run.pivotal.io/login)
 2. [Download cf cli](https://console.run.pivotal.io/tools) and follow instructions on the page.
 3. Create database service.
 4. Connect to DB from local client (optional).
+
+
+### Create a service
+
+View available services
+
+```
+cf marketplace
+```
+
+Create an instance of the ElephantSQL's service using the free tier called "turtle":
+```
+cf create-service elephantsql turtle rd-pcfspring
+```
+
+View service details using cf cli. Copy the dashboard URL to your clipboard.
+```
+cf service rd-pcfspring
+```
+
+Make sure you are logged into the pivotal web console and go to the dashboard URL acquired from the previous step.
+From the ElephantSQL dashboard, acquire, connection URL, username and password.
+
+
+## Connect to DB from local client.
+
+Use the credentials from the "Create a service" section, to create a database connection using your favorite client.
+
 
 ## Deployment
 
