@@ -1,4 +1,4 @@
-#pcfspring
+# pcfspring
 
 This purpose of this project is to act as a template for Spring applications deployed to Cloud Foundry environments.
 
@@ -46,6 +46,17 @@ cf login -a https://api.run.pivotal.io
 ```
 cf push
 ```
+
+## Actuator endpoint 
+
+Use actuator endpoint to validate that the application responds to requests.
+
+```
+https://rd-pcfspring.cfapps.io/actuator/health
+```
+
+Replace <rd-pcfspring> with you own app name.
+
 
 ## Maintenance / management
 
