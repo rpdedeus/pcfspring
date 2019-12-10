@@ -1,6 +1,6 @@
 # pcfspring
 
-This purpose of this project is to act as a template for Spring applications deployed to Cloud Foundry environments.
+This purpose of this project is to act as a guide for Spring applications deployed to Cloud Foundry environments.
 
 # Running locally
 
@@ -13,15 +13,15 @@ git clone https://github.com/rpdedeus/pcfspring
 cd pcfspring
 ```
 
-2. Ensure Postgres database is running
+2. Ensure Postgres database is running.
 
-3. Build and test
+3. Build and test.
 
 ```none
 ./mvnw clean package
 ```
 
-3. Run project
+3. Run project locally.
 
 ```none
 ./mvnw spring-boot:run -Dspring-boot.run.jvmArguments="-Dspring.profiles.active=cloud;-DDB_URL=jdbc:postgresql://localhost:5432/pcfspring;-DDB_UN=postgres;-DDB_PW=password"
@@ -48,13 +48,13 @@ cf marketplace
 Create an instance of the ElephantSQL's service using the free tier called "turtle":
 
 ```
-cf create-service elephantsql turtle rd-pcfspring
+cf create-service elephantsql turtle rd-pcfspring-db
 ```
 
 View service details using cf cli. Copy the dashboard URL to your clipboard.
 
 ```
-cf service rd-pcfspring
+cf service rd-pcfspring-db
 ```
 
 Make sure you are logged into the pivotal web console and go to the dashboard URL acquired from the previous step.
@@ -74,13 +74,15 @@ Use the credentials from the "Create a service" section, to create a database co
 cf login -a https://api.run.pivotal.io
 ```
 
-2. From the project's root directory, issue the command to push the applications.
+2. Open the manifest file. Change the value of the "name" key to something of you liking. This value has to be unique.
+
+3. From the project's root directory, issue the command to push the applications.
 
 ```
 cf push --no-start
 ```
 
-3. Set environment variables.
+4. Set environment variables.
 
 Set environment variables using the following format:  
 cf set-env APP_NAME ENV_VAR_NAME ENV_VAR_VALUE
@@ -91,7 +93,7 @@ cf set-env rd-pcfspring DB_PW <actual_password>
 cf set-env rd-pcfspring DB_URL <actual_url>
 ```
 
-4. Start application.
+5. Start application.
 
 ```
 cf start rd-pcfspring

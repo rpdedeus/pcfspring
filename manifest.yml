@@ -6,4 +6,4 @@ applications:
     buildpack: java_buildpack
     path: target/pcfspring-0.0.1-SNAPSHOT.jar
     services:
-      - rd-pcfspring
+      - rd-pcfspring-db
