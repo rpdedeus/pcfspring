@@ -61,7 +61,7 @@ Make sure you are logged into the pivotal web console and go to the dashboard UR
 From the ElephantSQL dashboard, acquire, connection URL, username and password.
 
 
-## Connect to DB from local client.
+### Connect to DB from local client.
 
 Use the credentials from the "Create a service" section, to create a database connection using your favorite client.
 
