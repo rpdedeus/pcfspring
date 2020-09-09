@@ -24,7 +24,10 @@ cd pcfspring
 3. Run project locally.
 
 ```none
-./mvnw spring-boot:run -Dspring-boot.run.jvmArguments="-Dspring.profiles.active=cloud;-DDB_URL=jdbc:postgresql://localhost:5432/pcfspring;-DDB_UN=postgres;-DDB_PW=password"
+export DB_URL=jdbc:postgresql://localhost:5432/pcfspring
+export DB_UN=postgres
+export DB_PW=password
+./mvnw spring-boot:run -Dspring-boot.run.jvmArguments="-Dspring.profiles.active=cloud"
 ```
 
 # Deployment 
@@ -147,3 +150,4 @@ cf apps rd-pcfspring
 ```
 cf ssh rd-pcfspring
 ```
+
