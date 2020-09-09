@@ -15,6 +15,11 @@ cd pcfspring
 
 2. Ensure Postgres database is running.
 
+```none
+psql
+# CREATE DATABABASE pcfspring
+```
+
 3. Build and test.
 
 ```none
@@ -142,7 +147,7 @@ or
 View specific app in the current org/space
 
 ```
-cf apps rd-pcfspring
+cf app rd-pcfspring
 ```
 
 * ssh into container
